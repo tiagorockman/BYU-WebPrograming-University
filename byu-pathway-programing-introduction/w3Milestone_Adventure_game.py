@@ -17,14 +17,14 @@ while scenario1_first.upper() not in ("LEFT", "RIGHT"):
     scenario1_first = input("\nGo LEFT into the dimly lit path. Go RIGHT into the path shrouded in darkness. ")
 
 if scenario1_first.upper() == "LEFT":
-    print("As you proceed down the dimly lit path, you come across a fork in the cave.\n"
+    print("\nAs you proceed down the dimly lit path, you come across a fork in the cave.\n"
           "The left tunnel looks narrow and unstable, while the right tunnel seems wider and more well-traveled.\n"
            "Which path will you take?")
     while scenario1_second.upper() not in ("NARROW", "WIDE"):
          scenario1_second = input("\nTake the NARROW left tunnel. Take the WIDE right tunnel.")
 
     if scenario1_second.upper() == "NARROW":
-        print(" The narrow tunnel opens into a small cavern.\n"
+        print("\n The narrow tunnel opens into a small cavern.\n"
                 "In the center there is a Poll, you see a glittering treasure chest.\n"
                  "However, you also notice a mysterious shadow lurking in the corner. What will you do?")
           
@@ -57,7 +57,7 @@ if scenario1_first.upper() == "LEFT":
                     "causing a huge tremor destroying all the cave with you inside.")
 
 else:
-    print("The dark path leads to a cavern filled with eerie sounds.\n"
+    print("\nThe dark path leads to a cavern filled with eerie sounds.\n"
           "You notice a faint glow in the distance. As you approach, you see a swarm of mystical fireflies surrounding an ancient,\n"
            "locked chest. What will you do?")
     while scenario1_second.upper() not in ("OPEN", "FOLLOW"):
