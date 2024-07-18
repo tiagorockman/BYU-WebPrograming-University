@@ -28,17 +28,34 @@ def populate_main_window(frm_main):
 
     btn_calculate = Button(frm_main, text="Calculate")
 
-    lbl_slow = Label(frm_main, width=3)
+    lbl_result = Label(frm_main, width=30)
+
+    btn_clear = Button(frm_main, text="Clear")
 
     lbl_radius.grid(      row=0, column=0, padx=3, pady=3)
     input_radius.grid(      row=0, column=1, padx=3, pady=3)
     btn_calculate.grid(row=0, column=2, padx=0, pady=3)
 
-    lbl_slow.grid(      row=1, column=0, padx=3, pady=3)
+    lbl_result.grid(      row=1, column=0, padx=3, pady=3)
+    btn_clear.grid(row=3,column=0,padx=3, pady=3)
+
+    def clear_window():
+        btn_clear.focus()
+        input_radius.clear()
+        lbl_result.config(text="")
+        input_radius.focus()
     
-    def calculate_circle_area(radius):
-        area = math.pi * (radius ** 2)
-        return area
+    def calculate_circle_area():
+        try:
+            radius = input_radius.get()
+            area = math.pi * (radius ** 2)
+            lbl_result.config(text=f"The circle area is: {area:.2f}")
+        except ValueError as type_error:
+            lbl_result.config(text=type_error)
+    
+    btn_calculate.config(command=calculate_circle_area)
+    btn_clear.config(comma=clear_window)
+    lbl_result.focus()
 
 if __name__ == "__main__":
     main()
