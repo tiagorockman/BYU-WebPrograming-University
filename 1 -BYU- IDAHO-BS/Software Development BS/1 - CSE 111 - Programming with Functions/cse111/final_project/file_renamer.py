@@ -3,7 +3,25 @@ from tkinter import Frame, Label, Button, filedialog
 import os
 
 
-def main():
+def list_folder_selection_files(folder_path):
+    try:
+        files = os.listdir(folder_path)
+        files = [f for f in files if os.path.isfile(os.path.join(folder_path, f))]
+        entry_text_area.delete(1.0, tk.END) #clrear the existing text
+        entry_text_area.insert(tk.END, "The files below will be renamed, as you choose FROM TEXT and TO TEXT inputs above.\nIf you choose FROM='B' TO='A' all B letters will be renamed to A.\n\n", "first_line_alert")
+        
+        if len(files) == 0:
+            entry_text_area.insert(tk.END, "There is no file in the folder selected.", "list_text")
+        else:
+            entry_text_area.insert(tk.END, "List of files:\n", "list_text")
+
+        for file in files:
+            entry_text_area.insert(tk.END, f"{file}\n")
+
+    except ValueError as err:
+        log_error(err, "List files on folder Selected")
+
+def create_window():
     # Create the Tk root object.
     root = tk.Tk()
     #window size
@@ -15,8 +33,8 @@ def main():
     frm_main.master.title("File Renamer")
     frm_main.pack(padx=4, pady=3, fill=tk.BOTH, expand=1)
     
-    populate_main_window(frm_main)
- 
+    populate_main_window(frm_main)    
+    
     root.mainloop()
 
 def populate_main_window(frm_main):
@@ -60,6 +78,7 @@ def populate_main_window(frm_main):
 
     rename_action.grid(row=8, column=0, padx=1, pady=5, )
     clear_action.grid(row=8, column=0, padx=10, pady=5,sticky='w')
+    
 
 def select_folder():
     try:
@@ -70,23 +89,7 @@ def select_folder():
     except ValueError as err:
         log_error(err, "Selec Folder")
 
-def list_folder_selection_files(folder_path):
-    try:
-        files = os.listdir(folder_path)
-        files = [f for f in files if os.path.isfile(os.path.join(folder_path, f))]
-        entry_text_area.delete(1.0, tk.END) #clrear the existing text
-        entry_text_area.insert(tk.END, "The files below will be renamed, as you choose FROM TEXT and TO TEXT inputs above.\nIf you choose FROM='B' TO='A' all B letters will be renamed to A.\n\n", "first_line_alert")
-        
-        if len(files) == 0:
-            entry_text_area.insert(tk.END, "There is no file in the folder selected.", "list_text")
-        else:
-            entry_text_area.insert(tk.END, "List of files:\n", "list_text")
 
-        for file in files:
-            entry_text_area.insert(tk.END, f"{file}\n")
-
-    except ValueError as err:
-        log_error(err, "List files on folder Selected")
 
 def rename():
     try:
@@ -104,8 +107,6 @@ def log_error(err, source):
     entry_text_area.delete(1.0, tk.END)
     entry_text_area.insert(f"Error source: {source} \nError message: {err}")
 
-
-
     
 if __name__ == "__main__":
-    main()
+    create_window()
