@@ -3,10 +3,19 @@ from tkinter import Frame, Label, Button, filedialog
 import os
 
 
-def list_folder_selection_files(folder_path):
+def list_folder_files(folder_path):
     try:
         files = os.listdir(folder_path)
         files = [f for f in files if os.path.isfile(os.path.join(folder_path, f))]
+        return files
+    except FileNotFoundError as err:
+        return []
+    except ValueError as verr:
+        log_error(err, "List files on folder Selected")
+
+def list_folder_selection_files(folder_path):
+    try:
+        files = list_folder_files(folder_path)       
         entry_text_area.delete(1.0, tk.END) #clrear the existing text
         entry_text_area.insert(tk.END, "The files below will be renamed, as you choose FROM TEXT and TO TEXT inputs above.\nIf you choose FROM='B' TO='A' all B letters will be renamed to A.\n\n", "first_line_alert")
         
@@ -17,7 +26,6 @@ def list_folder_selection_files(folder_path):
 
         for file in files:
             entry_text_area.insert(tk.END, f"{file}\n")
-
     except ValueError as err:
         log_error(err, "List files on folder Selected")
 
