@@ -19,8 +19,9 @@ doing any of the following:
             Time Spent
    Date       (hours)   Description of Work
 ----------  ----------  -------------------------
-2024-07-23      2.5     Trying to solve the test python file
-2021-12-03      .5      Watched video on 
+2024-07-23      4     Trying to solve the test python file
+2024-07-24      4      Writing clear and rename functions, also adjusting interface and created tooltip class with AI help.
+2024-07-25      2      Solving some problems, debugging and preparing for delivery
 =============Example====================
 
 
