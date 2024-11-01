@@ -1,0 +1,86 @@
+ [
+    {
+    "Book": "James",
+    "Chapter": 1,
+    "Verse": 5,
+    "EndVerse": 6,
+    "Text": "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed."
+    },
+    {
+        "Book": "Genesis",
+        "Chapter": 1,
+        "Verse": 1,
+        "EndVerse": 0,
+        "Text": "In the beginning God created the heavens and the earth."
+     },
+      {
+        "Book": "Genesis",
+        "Chapter": 1,
+        "Verse": 1,
+        "EndVerse": 0,
+        "Text": "In the beginning God created the heavens and the earth."
+      },
+      {
+        "Book": "Exodus",
+        "Chapter": 3,
+        "Verse": 14,
+        "EndVerse": 0,
+        "Text": "God said to Moses, 'I AM WHO I AM.' And He said, 'Thus you shall say to the sons of Israel, I AM has sent me to you.'"
+      },
+      {
+        "Book": "John",
+        "Chapter": 3,
+        "Verse": 16,
+        "EndVerse": 0,
+        "Text": "For God so loved the world, that He gave His only begotten Son, that whoever believes in Him shall not perish, but have eternal life."
+      },
+      {
+        "Book": "Psalm",
+        "Chapter": 23,
+        "Verse": 1,
+        "EndVerse": 0,
+        "Text": "The Lord is my shepherd, I shall not want."
+      },
+      {
+        "Book": "Romans",
+        "Chapter": 8,
+        "Verse": 28,
+        "EndVerse": 0,
+        "Text": "And we know that in all things God works for the good of those who love Him, who have been called according to His purpose."
+      },
+      {
+        "Book": "Matthew",
+        "Chapter": 5,
+        "Verse": 3,
+        "EndVerse": 5,
+        "Text": "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they will be comforted. Blessed are the meek, for they will inherit the earth."
+      },
+      {
+        "Book": "Proverbs",
+        "Chapter": 3,
+        "Verse": 5,
+        "EndVerse": 6,
+        "Text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight."
+      },
+      {
+        "Book": "Ephesians",
+        "Chapter": 6,
+        "Verse": 10,
+        "EndVerse": 12,
+        "Text": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms."
+      },
+      {
+        "Book": "James",
+        "Chapter": 1,
+        "Verse": 2,
+        "EndVerse": 4,
+        "Text": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance. Let perseverance finish its work so that you may be mature and complete, not lacking anything."
+      },
+      {
+        "Book": "Isaiah",
+        "Chapter": 40,
+        "Verse": 28,
+        "EndVerse": 31,
+        "Text": "Do you not know? Have you not heard? The Lord is the everlasting God, the Creator of the ends of the earth. He will not grow tired or weary, and his understanding no one can fathom. He gives strength to the weary and increases the power of the weak. Even youths grow tired and weary, and young men stumble and fall; but those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint."
+      }
+]
