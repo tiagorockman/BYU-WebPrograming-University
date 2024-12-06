@@ -341,6 +341,12 @@ LOWER(string)	                    Converts the string to lowercase
 UPPER(string)	                    Converts the string to uppercase
 LOCATE(find, search, start)	        Find a substring within the string
 SUBSTRING(string, start, length )	Return characters from within a string
+SUM([ALL| DISTINCT] expression)     Returns the sum of a column's values
+MAX([ALL| DISTINCT] expression)     Returns a column's highest value
+MIN([ALL| DISTINCT] expression)     Returns a column's lowest value
+COUNT([ALL| DISTINCT] expression)   Returns the number of rows in a column
+AVG([ALL| DISTINCT] expression)     Returns a column's average value
+
 
 ### Commonly used Numeric Functions
 
@@ -383,3 +389,65 @@ WHERE
 SELECT
 ORDER BY
 LIMIT
+
+
+## JOINS
+INNER JOIN       
+    Returns rows that have matching values in both tables	
+LEFT JOIN        
+    Returns all rows from the left table, and matched rows from the right table
+RIGHT JOIN       
+    Returns all rows from the right table, and matching rows from the left table
+FULL OUTER JOIN  
+    Returns all rows from both tables, even if there is not a related key
+
+**Order of System Execution**
+1. FROM and JOIN
+2. WHERE
+3. SELECT
+4. ORDER 
+
+**SELECT Order of Execution**
+- The written order, or the syntax order of how we write a query differs from the order of how the query is actually executed. It's important to understand the order of execution so you know what results are accessible where.
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+LIMIT
+
+
+```SQL
+--The ALL keyword is assumed with aggregate functions. You don't have to include it. This means all rows are included in the aggregate function, which is the default.
+
+
+SELECT AVG(ALL prod_price) AS 'Average Price'
+FROM products
+--All product prices are included in the average calculation.
+
+---You can use the DISTINCT keyword instead to include only unique values.
+
+SELECT AVG(DISTINCT prod_price) AS 'Average Price'
+FROM products
+--So if there are multiple products with the same price, that price will only be included once in the average calculation.
+```
+
+- The ROLLUP operator can be used with grouping and aggregates allowing you to add one or more summary rows to your results. A summary row will show up for every group you have.
+
+```SQL
+SELECT vendor_id, SUM(product_price) AS 'Total of Product Prices'
+FROM products
+WHERE vendor_id < 15
+GROUP BY vendor_id WITH ROLLUP
+
+vendor_id	Total of Product Prices
+010	        121.87
+011	        242.21
+012	        450.43
+013	        312.12
+014	        576.94
+NULL	    1703.57 --this line is because the WITH ROLLUP
+--The summary row shows up as the bottom row and totals all the totals into a grand total.
+```
