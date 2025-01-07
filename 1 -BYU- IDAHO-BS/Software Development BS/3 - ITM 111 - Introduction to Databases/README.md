@@ -451,3 +451,44 @@ vendor_id	Total of Product Prices
 NULL	    1703.57 --this line is because the WITH ROLLUP
 --The summary row shows up as the bottom row and totals all the totals into a grand total.
 ```
+
+**Subquery:**
+ - A query inside another query. The nested query will execute first.
+**Index:**
+ - A data structure that provides a way to retrieve data more quickly from a table based on values in a specific column.
+**View:**
+ - A virtual table based on results from a query from one or more base tables.
+
+ * A subquery is a query inside another query. The subquery executes first and then the result of that query is used as a value in the main query, which then runs. A subquery can be nested inside a WHERE, HAVING, FROM or SELECT clause. They can also be placed inside other statements such as an INSERT statement.
+
+## SQL Indexes Explained
+### SQL Indexes
+You can create SQL indexes from single or multiple columns.
+A SQL index is like the index of a book. It speeds up retrieval of a record. The relational database management system (RDBMS) can retrieve a record with the index key instead of having to perform a table scan.
+MySQL automatically creates indexes for primary and foreign keys significantly speeding up join performance.
+You should only create indexes on columns used in a join or search because the RDMS must update index every time you execute an INSERT, UPDATE, or DELETE.
+When to Create an Index
+When a column is used frequently in a search or a join.
+When a column contains a large number of distinct values.
+When the column is updated infrequently
+Clustered vs Non-clustered indexes
+Clustered index: The values in the column indexed are physically stored in alphabetical or numeric order.
+You can only have one clustered index per table.
+If you assign a primary key, the system automatically creates a clustered index on that column.
+If no primary key is defined on a table, the first column that has an index defined for it becomes the clustered index.
+Non-clustered index: Column values are not in alphabetical or numeric order
+You can add as many non-clustered indexes to a table as you want.
+You should only create additional non-clustered indexes on a table if you need to search or perform a join on that column. When you create a foreign key column, a nonclustered index is automatically created for that column.
+
+## VIEW
+A view is a virtual table based on the results from a query from one or more base tables. The view table will always refer back to the base table(s) for the most current data, so it’s not a point in time copy and doesn’t store any data itself. So it always shows up-to-date data. The data is recreated every time the view is referenced; or in other words, the query used to define it is rerun.
+
+Views come in handy when you have a complex query that you know you will need again and again so you create view from that query and then you have access to the view table without having to run the query again and again. You can also protect your base tables by having this extra layer of security between the user and the base table(s) because of the views. Because the view only contains selected data and are not permanent, users cannot mess up the data and views are often used in applications where the user only gets access to data through these views. You can also make sure only certain data is access by certain users with views.
+
+A SQL view is a SELECT statement that is stored as a database object.
+A SQL view acts as a virtual table, but contains no data.
+You can use a view anywhere you would use a table including in a SELECT, INSERT, UPDATE, or DELETE statement.
+Benefits of Using Views
+Design Flexibility: By using a view instead of a query in an application, it is easier to make changes to the underlying table structure.
+Improved Security: By using a view to return data from tables instead of a SELECT, you can hide the WHERE clause or other columns to which you do not want the user to have access.
+Query Simplification: You can write simple select statements against views, which handle complex queries and joins.
